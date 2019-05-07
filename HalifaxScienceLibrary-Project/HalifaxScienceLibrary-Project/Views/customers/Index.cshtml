@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HalifaxScienceLibrary_Project.customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer Table</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />
+<div class="form-group">
+    <label class="field-validation-error"> @ViewBag.ErrorMessage</label>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discount_code)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.discount_code)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cust_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cust_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cust_id })
+        </td>
+    </tr>
+}
+
+</table>

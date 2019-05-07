@@ -1,0 +1,313 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    body {
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../../Scripts/Images/milkyway.jpg");
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        color: #fffbfb;
+    }
+
+    .book-bus-form-box {
+        max-width: 350px;
+        border: 1px solid #ced4da;
+        margin: 0% auto 107px;
+    }
+
+    .radio-btn {
+        margin: 0 85px;
+    }
+
+        .radio-btn .btn {
+            margin: 20px 10px 20px 0;
+            box-shadow: none;
+        }
+
+            .radio-btn .btn:after {
+                content: '';
+                height: 15px;
+                width: 15px;
+                top: -5px;
+                left: -1px;
+                background-color: #fff;
+                position: relative;
+                display: inline-block;
+                border: 3px solid #fff;
+                visibility: visible;
+                border-radius: 50%;
+            }
+
+            .radio-btn .btn:checked:after {
+                content: '';
+                background-color: #000;
+                transition: 0.5s;
+            }
+
+        .radio-btn span {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+    .book-bus-form {
+        padding: 0 20px 20px;
+    }
+
+        .book-bus-form label {
+            margin-bottom: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+    input::placeholder {
+        color: #fff !important;
+    }
+
+    .input-div {
+        width: 151px;
+        display: inline-block;
+    }
+
+    .form-control {
+        font-size: 12px !important;
+        border-radius: 2 !important;
+        color: #fff !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .select-date::-webkit-inner-spin-button,
+    .select-date::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+    }
+
+    .select-date::-webkit-calendar-picker-indicator {
+        background: transparent !important;
+    }
+
+    .bus-select {
+        color: #fff !important;
+        font-size: 12px !important;
+        border: 1px solid #ced4da !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+
+        .bus-select option {
+            color: #000 !important;
+            font-size: 12px !important;
+            border: 1px solid #ced4da !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+        }
+
+    .bus {
+        border-radius: 10% !important;
+        background: linear-gradient(rgba(42,157,216,0.5),rgba(187,18,55,0.5)) !important;
+        font-size: 12px !important;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: none !important;
+    }
+
+    .carousel {
+        width: 900px;
+        height: 500px;
+        background: none repeat scroll 0 0 rgba(187,18,55,0.5);
+        margin-left: 100px;
+        margin-top: 20px;
+        padding: 1%;
+    }
+
+    #showBusesTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #showBusesTable td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #showBusesTable tr:nth-child(even) {
+            background-color: rgba(42,157,216,0.5);
+            color: white !important;
+        }
+
+        #showBusesTable tr:hover {
+            background-color: rgba(42,157,216,0.5);
+            color: white;
+        }
+
+        #showBusesTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgba(187,18,55,0.5);
+            border: dashed;
+            border-color: white;
+            color: white;
+        }
+</style>
+<h2 style="text-align:center; font-weight:bold ;margin-top: 10px">Welcome to Home Page</h2>
+<br />
+<br />
+
+<div class="form-group book-bus-form-box">
+
+
+    <input id="index" name="index" type="hidden" value="hello" />
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("DisplayTables", "ShowTables", FormMethod.Post))
+    {
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Display Table Names</label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="display_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Display Tables </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "articles", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add a new Article</label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add Article </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "customers", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add a new Customer</label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add Customer </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "transactions", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add a new Transaction</label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add Transaction </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "transactions", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Cancel a Transaction</label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Cancel Transaction </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "buy_items", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Buy More items</label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Buy </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "items", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add a new item </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "rents", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add Rent </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "authors", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add a Author </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "employees", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add Employees </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "monthly_expense", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add Monthly Expenses </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "Volumes", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add Volumes </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+    @Html.AntiForgeryToken()
+    @using (Html.BeginForm("Index", "Magazines", FormMethod.Post))
+    {
+
+        <div class="input-div">
+            <label class="bus-select" style="font-weight:bold; margin-left:0.5rem;border:0px!important">Add Magazine </label>
+        </div>
+        <div class="input-div">
+            <button type="submit" id="add_Article_tables" class="btn btn-primary bus" style="margin-bottom:0.5rem;margin-top:0.5rem"> Add </button>
+        </div>
+    }
+</div>
+
+<br />
+<br />
+

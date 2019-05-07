@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "DisplayTables";
+}
+<style>
+    body {
+        background-image: linear-gradient(rgba(16, 17, 17, 0.73),rgba(0,0,0,0.5)),url("../../Scripts/Images/triangle-background-17-e1446557615252.png");
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-size: cover;
+        color: #fffbfb;
+    }
+
+    .book-bus-form-box {
+        max-width: 350px;
+        border: 1px solid #ced4da;
+        margin: 0% auto 107px;
+    }
+
+    .radio-btn {
+        margin: 0 85px;
+    }
+
+        .radio-btn .btn {
+            margin: 20px 10px 20px 0;
+            box-shadow: none;
+        }
+
+            .radio-btn .btn:after {
+                content: '';
+                height: 15px;
+                width: 15px;
+                top: -5px;
+                left: -1px;
+                background-color: #fff;
+                position: relative;
+                display: inline-block;
+                border: 3px solid #fff;
+                visibility: visible;
+                border-radius: 50%;
+            }
+
+            .radio-btn .btn:checked:after {
+                content: '';
+                background-color: #000;
+                transition: 0.5s;
+            }
+
+        .radio-btn span {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+    .book-bus-form {
+        padding: 0 20px 20px;
+    }
+
+        .book-bus-form label {
+            margin-bottom: 5px;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+    input::placeholder {
+        color: #fff !important;
+    }
+
+    .input-div {
+        width: 151px;
+        display: inline-block;
+    }
+
+    .form-control {
+        font-size: 12px !important;
+        border-radius: 2 !important;
+        color: #fff !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .select-date::-webkit-inner-spin-button,
+    .select-date::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+    }
+
+    .select-date::-webkit-calendar-picker-indicator {
+        background: transparent !important;
+    }
+
+    .bus-select {
+        color: #fff !important;
+        font-size: 12px !important;
+        border: 1px solid #ced4da !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+
+        .bus-select option {
+            color: #000 !important;
+            font-size: 12px !important;
+            border: 1px solid #ced4da !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+        }
+
+    .bus {
+        border-radius: 10% !important;
+        background: linear-gradient(rgba(16, 17, 17, 0.73),rgba(79, 228, 180, 0.79)) !important;
+        font-size: 12px !important;
+        font-weight: bold;
+        width: 100%;
+        padding: 10px 0;
+        box-shadow: none !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel {
+        width: 900px;
+        height: 500px;
+        background: none repeat scroll 0 0 rgba(187,18,55,0.5);
+        margin-left: 100px;
+        margin-top: 20px;
+        padding: 1%;
+    }
+
+    #showBusesTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #showBusesTable td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #showBusesTable tr:nth-child(even) {
+            background-color: rgba(42,157,216,0.5);
+            color: white !important;
+        }
+
+        #showBusesTable tr:hover {
+            background-color: rgba(42,157,216,0.5);
+            color: white;
+        }
+
+        #showBusesTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: rgba(187,18,55,0.5);
+            border: dashed;
+            border-color: white;
+            color: white;
+        }
+</style>
+<h2 style="text-align:center; font-weight:bold ;margin-top: 10px">Show Tables</h2>
+<br />
+<br />
+
+    <div class="form-group book-bus-form-box">
+
+        <div class="">
+
+
+            <br />
+            <table id="showTable">
+                <thead>
+                </thead>
+                <tbody>
+                    @foreach (var v in ViewBag.Tableslist)
+                    {
+                        var c = v + "_table_view";
+                        <div class="input-div">
+                            <form action="@c" method="post">
+                                <button type="submit" id="@v" class="btn btn-primary bus" style="margin-left:90px">@v. </button>
+                            </form>
+                        </div>
+                        <br />
+                    }
+                </tbody>
+            </table>
+            <br>
+
+        </div>
+
+    </div>
+    <br />
+    <br />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>     
+
+</script>

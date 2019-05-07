@@ -1,0 +1,40 @@
+﻿
+
+@model IEnumerable<HalifaxScienceLibrary_Project.volume>
+
+
+@{
+    ViewBag.Title = "volume_table_view";
+}
+
+<h2>volume_table_view</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.magazine.name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.magazine.name)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "DisplayTables")
+</div>

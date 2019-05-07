@@ -1,0 +1,34 @@
+﻿@model HalifaxScienceLibrary_Project.volume
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>volume</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.magazine.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.magazine.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.volume_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

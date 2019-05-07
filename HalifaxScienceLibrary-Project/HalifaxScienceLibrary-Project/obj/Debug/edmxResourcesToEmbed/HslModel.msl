@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HSLprojectModelStoreContainer" CdmEntityContainer="HSLEntities">
+    <EntitySetMapping Name="books">
+      <EntityTypeMapping TypeName="HSLprojectModel.book">
+        <MappingFragment StoreEntitySet="book">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="HSLprojectModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="SIN" ColumnName="SIN" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="hourly_rate" ColumnName="hourly_rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="HSLprojectModel.item">
+        <MappingFragment StoreEntitySet="item">
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monthly_expense">
+      <EntityTypeMapping TypeName="HSLprojectModel.monthly_expense">
+        <MappingFragment StoreEntitySet="monthly_expense">
+          <ScalarProperty Name="monthlyExpense_id" ColumnName="monthlyExpense_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="cost_heat" ColumnName="cost_heat" />
+          <ScalarProperty Name="cost_water" ColumnName="cost_water" />
+          <ScalarProperty Name="cost_electricity" ColumnName="cost_electricity" />
+          <ScalarProperty Name="rent_id" ColumnName="rent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mothlyexpense_employee">
+      <EntityTypeMapping TypeName="HSLprojectModel.mothlyexpense_employee">
+        <MappingFragment StoreEntitySet="mothlyexpense_employee">
+          <ScalarProperty Name="hours_worked" ColumnName="hours_worked" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="SIN" ColumnName="SIN" />
+          <ScalarProperty Name="monthlyExpense_id" ColumnName="monthlyExpense_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rents">
+      <EntityTypeMapping TypeName="HSLprojectModel.rent">
+        <MappingFragment StoreEntitySet="rent">
+          <ScalarProperty Name="rent_id" ColumnName="rent_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="cost_rent" ColumnName="cost_rent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="buy_items">
+      <EntityTypeMapping TypeName="HSLprojectModel.buy_items">
+        <MappingFragment StoreEntitySet="buy_items">
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+          <ScalarProperty Name="trn_code" ColumnName="trn_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="authors">
+      <EntityTypeMapping TypeName="HSLprojectModel.author">
+        <MappingFragment StoreEntitySet="author">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="author_articles">
+      <EntityTypeMapping TypeName="HSLprojectModel.author_articles">
+        <MappingFragment StoreEntitySet="author_articles">
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="book_author">
+      <EntityTypeMapping TypeName="HSLprojectModel.book_author">
+        <MappingFragment StoreEntitySet="book_author">
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="HSLprojectModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="discount_code" ColumnName="discount_code" />
+          <ScalarProperty Name="phone_num" ColumnName="phone_num" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="articles">
+      <EntityTypeMapping TypeName="HSLprojectModel.article">
+        <MappingFragment StoreEntitySet="articles">
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="volume_id" ColumnName="volume_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="article_id" ColumnName="article_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="magazines">
+      <EntityTypeMapping TypeName="HSLprojectModel.magazine">
+        <MappingFragment StoreEntitySet="magazine">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="volumes">
+      <EntityTypeMapping TypeName="HSLprojectModel.volume">
+        <MappingFragment StoreEntitySet="volume">
+          <ScalarProperty Name="magazine_id" ColumnName="magazine_id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="volume_id" ColumnName="volume_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transactions">
+      <EntityTypeMapping TypeName="HSLprojectModel.transaction">
+        <MappingFragment StoreEntitySet="transaction">
+          <ScalarProperty Name="cust_id" ColumnName="cust_id" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="trn_code" ColumnName="trn_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

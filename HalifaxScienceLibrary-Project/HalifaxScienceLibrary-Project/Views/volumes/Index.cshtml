@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HalifaxScienceLibrary_Project.volume>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>VOLUME Console</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.volume_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.magazine.name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.volume_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.magazine.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.volume_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.volume_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.volume_id })
+        </td>
+    </tr>
+}
+
+</table>

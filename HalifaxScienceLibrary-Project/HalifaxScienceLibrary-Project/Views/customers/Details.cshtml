@@ -1,0 +1,58 @@
+﻿@model HalifaxScienceLibrary_Project.customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone_num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discount_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discount_code)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cust_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

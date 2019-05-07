@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HalifaxScienceLibrary_Project.article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Articles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />
+<div class="form-group">
+    <label class="field-validation-error"> @ViewBag.ErrorMessage</label>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.article_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.volume.year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.magazine.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volume.volume_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.article_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.volume.year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.magazine.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volume.volume_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.article_id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.article_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.article_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,40 @@
+﻿
+
+
+@model IEnumerable<HalifaxScienceLibrary_Project.rent>
+
+@{
+    ViewBag.Title = "rent_table_view";
+}
+
+<h2>Rent Table</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost_rent)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cost_rent)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "DisplayTables")
+</div>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b16dd881dbdf42bf923452ac1d99ec2b" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="HSLprojectModel.book" Width="1.5" PointX="7.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSLprojectModel.employee" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSLprojectModel.item" Width="1.5" PointX="11" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSLprojectModel.monthly_expense" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSLprojectModel.mothlyexpense_employee" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HSLprojectModel.rent" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="HSLprojectModel.fk_expense_monthly_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="HSLprojectModel.fk_expense_monthly_expnse" ManuallyRouted="false" />
+        <AssociationConnector Association="HSLprojectModel.fk_expense_rent" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HSLprojectModel.buy_items" Width="1.5" PointX="15.125" PointY="6.25" />
+        <AssociationConnector Association="HSLprojectModel.fk_item_buyitem" />
+        <EntityTypeShape EntityType="HSLprojectModel.author" Width="1.5" PointX="13.875" PointY="0.5" />
+        <EntityTypeShape EntityType="HSLprojectModel.author_articles" Width="1.5" PointX="10.75" PointY="2.75" />
+        <EntityTypeShape EntityType="HSLprojectModel.book_author" Width="1.5" PointX="10.75" PointY="0.5" />
+        <AssociationConnector Association="HSLprojectModel.fk_authorArticle_Author" />
+        <AssociationConnector Association="HSLprojectModel.fk_authorbook_author" />
+        <AssociationConnector Association="HSLprojectModel.fk_book_authorbook" />
+        <EntityTypeShape EntityType="HSLprojectModel.customer" Width="1.5" PointX="9.25" PointY="5.5" />
+        <EntityTypeShape EntityType="HSLprojectModel.article" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="HSLprojectModel.fk_authorArticle_article" />
+        <EntityTypeShape EntityType="HSLprojectModel.magazine" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="HSLprojectModel.volume" Width="1.5" PointX="3" PointY="1.625" />
+        <AssociationConnector Association="HSLprojectModel.fk_articles_magazine" />
+        <AssociationConnector Association="HSLprojectModel.fk_volume_article" />
+        <AssociationConnector Association="HSLprojectModel.fk_volume_magazine" />
+        <EntityTypeShape EntityType="HSLprojectModel.transaction" Width="1.5" PointX="11.5" PointY="5.625" />
+        <AssociationConnector Association="HSLprojectModel.fk_trn_buyitem" />
+        <AssociationConnector Association="HSLprojectModel.fk_trn_cust" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
